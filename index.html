@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Netflix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #141414;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .banner {
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .banner-content h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .banner-content button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .carousel-container {
+            padding: 20px;
+        }
+
+        .carousel-container h2 {
+            margin: 20px 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 200px;
+            margin-right: 10px;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.05);
+        }
+
+        .carousel-item img {
+            width: 200px;
+            height: 112px;
+            display: block;
+        }
+
+        .carousel-item .content {
+            padding: 10px;
+        }
+
+        .carousel-item h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .carousel-item p {
+            font-size: 14px;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .carousel-control.prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .carousel-control.next {
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="netflix-logo.png" alt="Netflix">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Séries</a></li>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Mais Recentes</a></li>
+                <li><a href="#">Minha Lista</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="banner">
+            <img src="banner-image.jpg" alt="Banner Principal">
+            <div class="banner-content">
+                <h1>Título do Filme</h1>
+                <p>Descrição do filme ou série.</p>
+                <button>Assistir</button>
+                <button>Mais Informações</button>
+            </div>
+        </section>
+        <section class="carousel-container">
+            <h2>Populares na Netflix</h2>
+            <div class="carousel-wrapper">
+                <a href="topico1.html" class="carousel-item">
+                    <img src="img1.jpg" alt="Imagem 1">
+                    <div class="content">
+                        <h2>Tópico 1</h2>
+                        <p>Conteúdo do Slide 1.</p>
+                    </div>
+                </a>
+                <a href="pagina2.html" class="carousel-item">
+                    <img src="img2.jpg" alt="Imagem 2">
+                    <div class="content">
+                        <h2>Tópico 2</h2>
+                        <p>Conteúdo do Slide 2.</p>
+                    </div>
+                </a>
+                <a href="pagina3.html" class="carousel-item">
+                    <img src="img3.jpg" alt="Imagem 3">
+                    <div class="content">
+                        <h2>Tópico 3</h2>
+                        <p>Conteúdo do Slide 3.</p>
+                    </div>
+                </a>
+                <a href="pagina4.html" class="carousel-item">
+                    <img src="img4.jpg" alt="Imagem 4">
+                    <div class="content">
+                        <h2>Título do Slide 4</h2>
+                        <p>Conteúdo do Slide 4.</p>
+                    </div>
+                </a>
+                <a href="pagina5.html" class="carousel-item">
+                    <img src="img5.jpg" alt="Imagem 5">
+                    <div class="content">
+                        <h2>Título do Slide 5</h2>
+                        <p>Conteúdo do Slide 5.</p>
+                    </div>
+                </a>
+            </div>
+            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+        </section>
+    </main>
+    <script>
+        let currentSlide = 0;
+
+        function moveCarousel(direction) {
+            const carousel = document.querySelector('.carousel-wrapper');
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+            const visibleItems = 4; // Número de itens visíveis ao mesmo tempo
+            const maxSlide = totalItems - visibleItems;
+
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            } else if (currentSlide > maxSlide) {
+                currentSlide = maxSlide;
+            }
+
+            const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(items[0]).marginRight);
+            const newTransformValue = -currentSlide * itemWidth;
+
+            carousel.style.transform = `translateX(${newTransformValue}px)`;
+        }
+    </script>
+</body>
+</html>
